@@ -1,19 +1,19 @@
-import WindowIcon from "../assets/svg/window.js"
-import MailIcon from "../assets/svg/mail.js"
-import DisconnectIcon from "../assets/svg/disconnect.js"
+import WindowIcon from "../assets/svg/window.js";
+import MailIcon from "../assets/svg/mail.js";
+import DisconnectIcon from "../assets/svg/disconnect.js";
 
 export default (height) => {
     let user;
-    user = JSON.parse(localStorage.getItem('user'))
+    user = JSON.parse(localStorage.getItem('user'));
     if (typeof user === 'string') {
-      user = JSON.parse(user)
+        user = JSON.parse(user);
     }
     if (user && user.type === 'Employee') {
-      return (
-        `
+        return (
+            `
         <div class='vertical-navbar' style='height: ${height}vh;'>
           <div class='layout-title'> Billed </div>
-          <div id='layout-icon1' data-testid="icon-window">
+          <div id='layout-icon1' data-testid="icon-window" class="active-icon">
             ${WindowIcon}
           </div>
           <div id='layout-icon2' data-testid="icon-mail">
@@ -24,10 +24,10 @@ export default (height) => {
           </div>
       </div>
         `
-      ) 
+        );
     } else {
-      return (
-        `
+        return (
+            `
         <div class='vertical-navbar' style='height: ${height}vh;'>
           <div class='layout-title'> Billed </div>
             <div id='layout-disconnect' data-testid='layout-disconnect'>
@@ -35,6 +35,6 @@ export default (height) => {
             </div>
           </div>
         `
-      )
+        );
     }
-}
+};
